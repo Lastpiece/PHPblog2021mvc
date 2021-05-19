@@ -1,11 +1,11 @@
 <?php
 namespace App\src\DAO;
 
-use App\src\model\Article;
 use PDO;
 use PDOException;
+use App\src\models\Article;
 
-    class ArticleManager
+    class ArticleDAO
     {
         //! PARTIE CONNEXION A LA BDD
         private $db;
