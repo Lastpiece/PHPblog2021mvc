@@ -1,4 +1,9 @@
 <?php
+namespace App\src\DAO;
+
+use App\src\model\Article;
+use PDO;
+use PDOException;
 
     class ArticleManager
     {
