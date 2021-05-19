@@ -2,8 +2,8 @@
 
 namespace App\src;
 
-use App\src\controller\FrontController;
 use Exception;
+use App\src\controller\FrontController;
 
 class Router{
 
@@ -15,7 +15,8 @@ class Router{
 
     public function run(){
         try{
-            $this->frontController->home();
+            // $this->frontController->home();
+            $this->frontController->comment();
         }catch(Exception $err){
             echo 'Erreur : '.$err->getMessage();
         }

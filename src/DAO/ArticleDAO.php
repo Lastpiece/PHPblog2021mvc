@@ -2,40 +2,10 @@
 namespace App\src\DAO;
 
 use PDO;
-use PDOException;
 use App\src\models\Article;
 
-    class ArticleDAO
+    class ArticleDAO extends DAO
     {
-        //! PARTIE CONNEXION A LA BDD
-        private $db;
-
-        public function __construct()
-        {
-            $this->getDb();
-        }
-
-        public function setDb()
-        {
-            try {
-                $this->db = new PDO(DB_HOST, DB_USER, DB_PASS);
-                $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-                return $this->db;
-            } catch (PDOException $e) {
-                echo 'Erreur : '.$e->getMessage();
-            }
-        }
-
-        public function getDb()
-        {
-            if (null === $this->db) {
-                return $this->setDb();
-            }
-
-            return $this->db;
-        }
-
         //! PARTIE GESTION D'ARTICLES DANS LA BDD
         public function buildArticle($row)
         {
@@ -45,10 +15,11 @@ use App\src\models\Article;
         public function getAllArticles()
         {
             $articles = [];
-
-            $req = $this->db->prepare('SELECT * FROM article ORDER BY created_at DESC');
-            $req->execute();
-            $result = $req->fetchAll();
+            $sql = 'SELECT * FROM article ORDER BY created_at DESC';
+            $req = $this->createQuery($sql);
+            // $req = $this->db->prepare($sql);
+            // $req->execute();
+            $result = $req->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($result as $row) {
                 $id = $row['id'];
