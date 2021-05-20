@@ -18,7 +18,7 @@ use App\src\models\Comment;
 
             foreach ($result as $row){
                 $id = $row['id'];
-                $comments['id'] = $this->buildComment($row);
+                $comments[$id] = $this->buildComment($row);
             }
             return $comments;
         }
