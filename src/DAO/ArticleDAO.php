@@ -29,4 +29,12 @@ use App\src\models\Article;
 
             return $articles;
         }
+
+        public function getArticle($id){
+            $sql = 'SELECT * FROM article WHERE id= ?';
+            $result = $this->createQuery($sql, [$id]);
+            $article = $result->fetch();
+
+            return $this->buildArticle($article);
+        }
     }

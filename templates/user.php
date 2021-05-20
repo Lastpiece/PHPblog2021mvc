@@ -1,6 +1,7 @@
+require 'inc/'
     <?php
-        require 'inc/header.php';
-        foreach($articles as $article){
+    require 'inc/header.php';
+        foreach($users as $user){
         ?>
          <article class="media">
         <figure class="media-left mt-3">
@@ -11,20 +12,20 @@
         <div class="media-content">
             <div class="content">
                 <p>
-                    <h2><?php echo $article->getTitle(); ?></h2>
+                    <h2><?php echo $user->getTitle(); ?></h2>
                     <!-- 
                     </small> <small>
-                        <p>Crée le : <?php echo $article->getCreatedAt(); ?>
+                        <p>Crée le : <?php echo $user->getCreatedAt(); ?>
                         </p>
                     </small> -->
                     <br>
-                    <?php echo $article->getContent(); ?>
+                    <?php echo $user->getContent(); ?>
                 </p>
             </div>
         </div>
         <div class="media-right">
             <small>
-                <p>Crée le : <?php echo $article->getCreatedAt(); ?>
+                <p>Crée le : <?php echo $user->getCreatedAt(); ?>
                 </p>
             </small>
         </div>

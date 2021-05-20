@@ -16,6 +16,7 @@ _Projet Blog_
 ### Thème(s)
 ### Corps de l'article
 ### Date de rédaction/modification
+
 ### (Image de l'article)
 
 ## Commentaires - Table & Classe
@@ -23,6 +24,14 @@ _Projet Blog_
 ### Auteur (Nom & email)
 ### Date de rédaction
 
+### Id de l'article
+
+## User - Table & Classe
+### Pseudo
+### Mail
+### Mot de passe
+
+# Créer la base de données correspondante
 ===
 
 - Create Base libraries

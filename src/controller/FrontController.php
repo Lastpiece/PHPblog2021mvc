@@ -25,4 +25,8 @@ class FrontController{
         $comments = $this->commentDAO->getAllComments();
         require '../templates/comment.php';
     }
+    public function contact(){
+        // $comments = $this->commentDAO->getAllComments();
+        require '../templates/contact.php';
+    }
 }
